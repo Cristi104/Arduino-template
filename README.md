@@ -1,6 +1,6 @@
 # Arduino template
 
-A template which allows developers to create, build, and upload arduino based projects while using other c++ IDEs and LSPs
+A template which allows developers to create, build, and upload arduino based projects while using other c++ IDEs and have access to c++ LSPs for code autocompletion, warnings, and gotos.
 
 ## Usage
 
@@ -10,7 +10,8 @@ Clone or download the repository
 git clone https://github.com/Cristi104/Arduino-template && cd Arduino-template
 ```
 
-By default the source code is compiled and uploaded for a Adruino Uno R3 you can change the details inside the CMakeLists.txt file
+Now you nedd to configure the CMake variables in special the board and the path to arduino-cli.
+By default the source code is compiled and uploaded for a Adruino Uno R3.
 
 ```CMake
 # config settings
@@ -32,4 +33,10 @@ set(MICRO_CONTROLLER "m328p")
 # end of config
 ```
 
-Now that you have changed the board and 
+Now that you have changed the board and cli directory set correctly you can build and upload.
+
+```sh 
+cmake -B build -S . && cmake --build build --target upload
+```
+
+
