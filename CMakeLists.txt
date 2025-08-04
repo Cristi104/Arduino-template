@@ -3,11 +3,15 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 11)
 
 # config settings
-set(SKETCH_NAME "arduino-template") # project name also change the root_dir name and the .ino name to the same thing
+set(SKETCH_NAME "Arduino-template") # project name also change the root_dir name and the .ino name to the same thing
 
-set(BOARD_TYPE "avr") # microprocessor arhitecture
-set(BOARD_TYPE_VERSION "1.8.6") # arhitecture version
-set(ARDUINO_CLI_DIR "~/snap/arduino-cli/60/.arduino15/packages/arduino/hardware") # path to the hardware folder inside arduino-cli for headers
+set(ARDUINO_CLI_DIR "~/.arduino15") # path to the .arduino15 folder inside arduino-cli for headers
+
+# you may need to change these depending on your specific compiler and arhitecture
+set(ARHITECTURE "avr")
+set(ARHITECTURE_VERSION "1.8.6")
+set(COMPILER "avr-gcc")
+set(COMPILER_VERSION "7.3.0-atmel3.6.1-arduino7")
 
 # set for normal board upload
 set(ARDUINO_BOARD "arduino:avr:uno")
@@ -34,9 +38,9 @@ target_include_directories(dummy PRIVATE
    ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_BUILD_DIR}/lib/*/src
     ${CMAKE_BUILD_DIR}/lib/*/include
-    ${ARDUINO_CLI_DIR}/${BOARD_TYPE}/${BOARD_TYPE_VERSION}/cores/arduino
-    ${ARDUINO_CLI_DIR}/${BOARD_TYPE}/${BOARD_TYPE_VERSION}/variants/standard
-    /usr/lib/avr/include
+    ${ARDUINO_CLI_DIR}/packages/arduino/hardware/${ARHITECTURE}/${ARHITECTURE_VERSION}/cores/arduino
+    ${ARDUINO_CLI_DIR}/packages/arduino/hardware/${ARHITECTURE}/${ARHITECTURE_VERSION}/variants/standard
+    ${ARDUINO_CLI_DIR}/packages/arduino/tools/${COMPILER}/${COMPILER_VERSION}/${ARHITECTURE}/include
 )
 
 add_custom_target(compile

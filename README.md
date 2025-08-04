@@ -15,11 +15,11 @@ By default the source code is compiled and uploaded for a Adruino Uno R3.
 
 ```CMake
 # config settings
-set(SKETCH_NAME "arduino-template") # project name also change the root_dir name and the .ino name to the same thing
+set(SKETCH_NAME "Arduino-template") # project name also change the root_dir name and the .ino name to the same thing
 
 set(BOARD_TYPE "avr") # microprocessor arhitecture
 set(BOARD_TYPE_VERSION "1.8.6") # arhitecture version
-set(ARDUINO_CLI_DIR "~/snap/arduino-cli/60/.arduino15/packages/arduino/hardware") # path to the hardware folder inside arduino-cli for headers
+set(ARDUINO_CLI_DIR ".arduino15/packages/arduino/hardware") # path to the hardware folder inside arduino-cli for headers
 
 # set for normal board upload
 set(ARDUINO_BOARD "arduino:avr:uno")
