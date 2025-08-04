@@ -17,7 +17,8 @@ By default the source code is compiled and uploaded for a Adruino Uno R3.
 # config settings
 set(SKETCH_NAME "Arduino-template") # project name also change the root_dir name and the .ino name to the same thing
 
-set(ARDUINO_CLI_DIR "~/.arduino15") # path to the .arduino15 folder inside arduino-cli for headers
+set(ARDUINO_CLI_DIR "$ENV{HOME}/.arduino15") # path to the .arduino15 directory
+set(ARDUINO_DIR "$ENV{HOME}/Arduino") # path to the Arduino directory 
 
 # you may need to change these depending on your specific compiler and arhitecture
 set(ARHITECTURE "avr")
