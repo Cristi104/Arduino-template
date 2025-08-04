@@ -17,9 +17,13 @@ By default the source code is compiled and uploaded for a Adruino Uno R3.
 # config settings
 set(SKETCH_NAME "Arduino-template") # project name also change the root_dir name and the .ino name to the same thing
 
-set(BOARD_TYPE "avr") # microprocessor arhitecture
-set(BOARD_TYPE_VERSION "1.8.6") # arhitecture version
-set(ARDUINO_CLI_DIR ".arduino15/packages/arduino/hardware") # path to the hardware folder inside arduino-cli for headers
+set(ARDUINO_CLI_DIR "~/.arduino15") # path to the .arduino15 folder inside arduino-cli for headers
+
+# you may need to change these depending on your specific compiler and arhitecture
+set(ARHITECTURE "avr")
+set(ARHITECTURE_VERSION "1.8.6")
+set(COMPILER "avr-gcc")
+set(COMPILER_VERSION "7.3.0-atmel3.6.1-arduino7")
 
 # set for normal board upload
 set(ARDUINO_BOARD "arduino:avr:uno")
